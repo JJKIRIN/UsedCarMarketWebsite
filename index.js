@@ -489,12 +489,18 @@ ensureDatabaseExists()
     const count = await productRepository.count();
     if (count === 0) {
       const defaultProducts = [
-        { name: "Strawberry Macaroon", price: 3.00, image: "strawberry.jpg" },
-        { name: "Chocolate Macaroon", price: 2.50, image: "chocolate.jpg" },
-        { name: "Candy Macaroon", price: 2.75, image: "candy.jpg" },
-        { name: "Berry Macaroon", price: 3.00, image: "berry.jpg" },
-        { name: "Caramel Macaroon", price: 2.50, image: "caramel.jpg" },
-        { name: "Orange Macaroon", price: 2.50, image: "orange.jpg" }
+        { name: "Toyota Corolla 2016", price: 91000.00, image: "toyotaCorolla.jpg" },
+        { name: "Toyota Camry 2015", price: 75000.00, image: "toyotaCamry.jpg" },
+        { name: "Toyota Vios 2014", price: 65000.00, image: "ToyotaVios.jpg" },
+        { name: "Toyota Sabah 2008", price: 41480.00, image: "ToyotaSabah.jpg" },
+        { name: "Toyota CHR 2015", price: 48500.00, image: "ToyotaCHR.jpg" },
+        { name: "Toyota Audi R8 2023", price: 228000.00, image: "AudiR8.jpg" },
+        { name: "Audi Q5 2021", price: 105000.00, image: "AudiQ5.jpg" },
+        { name: "Audi PB18 2015", price: 55000.00, image: "AudiPB18.jpg" },
+        { name: "Audi A5 2020", price: 120000.00, image: "AudiA5.jpg" },
+        { name: "Audi A4 2011", price: 85000.00, image: "AudiA4.jpg" },
+        { name: "Orange Macaroon", price: 2.50, image: "AudiR8.jpg" },
+        { name: "Orange Macaroon", price: 2.50, image: "AudiR8.jpg" }
       ];
       for (const prod of defaultProducts) {
         await productRepository.save(prod);
