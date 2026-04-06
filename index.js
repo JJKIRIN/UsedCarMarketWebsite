@@ -499,8 +499,8 @@ ensureDatabaseExists()
         { name: "Audi PB18 2015", price: 55000.00, image: "AudiPB18.jpg" },
         { name: "Audi A5 2020", price: 120000.00, image: "AudiA5.jpg" },
         { name: "Audi A4 2011", price: 85000.00, image: "AudiA4.jpg" },
-        { name: "Orange Macaroon", price: 2.50, image: "AudiR8.jpg" },
-        { name: "Orange Macaroon", price: 2.50, image: "AudiR8.jpg" }
+        { name: "Orange Macaroon", price: 2.50, image: "cars1.jpg" },
+        { name: "Orange Macaroon", price: 2.50, image: "car2.jpg" }
       ];
       for (const prod of defaultProducts) {
         await productRepository.save(prod);
