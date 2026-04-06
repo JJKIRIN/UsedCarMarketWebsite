@@ -1,7 +1,7 @@
 {
-  "name": "mikes-macaroon-market",
+  "name": "used-car-market",
   "version": "1.0.0",
-  "description": "Mike's Macaroon Market",
+  "description": "Used Car Market",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
