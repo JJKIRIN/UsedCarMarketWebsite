@@ -69,7 +69,7 @@ const OrderItemEntity = new EntitySchema({
 
 // Function to ensure the target database exists; if not, create it.
 async function ensureDatabaseExists() {
-  const targetDB = process.env.DB_NAME || "used-car-market";
+  const targetDB = process.env.DB_NAME || "mikes_macaroon_market";
   const dbConfig = {
     host: process.env.DB_HOST || "localhost",
     port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432,
@@ -164,7 +164,7 @@ const AppDataSource = new DataSource({
   ssl: (process.env.DB_HOST && process.env.DB_HOST != 'localhost') ? { ca: fs.readFileSync('global-bundle.pem').toString() } : false,
   username: process.env.DB_USER || "postgres",
   password: process.env.DB_PASS || "postgres",
-  database: process.env.DB_NAME || "used-car-market",
+  database: process.env.DB_NAME || "mikes_macaroon_market",
   synchronize: true, // Automatically syncs the schema (not recommended for production)
   logging: false,
   entities: [ProductEntity, OrderEntity, OrderItemEntity]
@@ -244,7 +244,7 @@ app.get("/", (req, res) => {
       </div>
     </div>
   `;
-  res.send(renderPage("Used Car Market", content));
+  res.send(renderPage("Mike's Macaroon Market", content));
 });
 
 // Products route: List available products from the database with images.
@@ -499,8 +499,8 @@ ensureDatabaseExists()
         { name: "Audi PB18 2015", price: 55000.00, image: "AudiPB18.jpg" },
         { name: "Audi A5 2020", price: 120000.00, image: "AudiA5.jpg" },
         { name: "Audi A4 2011", price: 85000.00, image: "AudiA4.jpg" },
-        { name: "Orange Macaroon", price: 2.50, image: "cars1.jpg" },
-        { name: "Orange Macaroon", price: 2.50, image: "car2.jpg" }
+        { name: "Bezza 2014", price: 30000.00, image: "cars1.jpg" },
+        { name: "Axia 2002", price: 32000.00, image: "car2.jpg" }
       ];
       for (const prod of defaultProducts) {
         await productRepository.save(prod);
