@@ -217,7 +217,7 @@ function renderPage(title, content) {
 }
 
 // Construct the hero image URL using AWS S3 environment variables.
-const heroImageUrl = `https://${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com/shop.jpg`;
+const heroImageUrl = `https://${process.env.S3_BUCKET}.s3.${process.env.S3_REGION}.amazonaws.com/used-car-shop.jpg`;
 
 // Home route with a hero banner image from AWS S3.
 app.get("/", (req, res) => {
@@ -260,7 +260,7 @@ app.get("/products", async (req, res) => {
           <span id="cartIcon"><i class="fas fa-shopping-cart"></i></span> Cart (<span id="cartCount">0</span>)
         </button>
       </div>
-      <h1 class="mb-4">Our Products</h1>
+      <h1 class="mb-4">Our Cars</h1>
       <div class="list-group">
     `;
 
@@ -461,7 +461,7 @@ app.post("/checkout", async (req, res) => {
       <div class="text-center">
         <h1>Thank you for your order!</h1>
         <p>Your order ID is ${savedOrder.id}.</p>
-        <p>We appreciate your business. Your delicious macaroons are on their way!</p>
+        <p>We appreciate your business. Your car are on their way!</p>
         <a class="btn btn-primary" href="/" onclick="clearCart()">Back to Home</a>
       </div>
       <script>
@@ -471,7 +471,7 @@ app.post("/checkout", async (req, res) => {
         clearCart();
       </script>
     `;
-    res.send(renderPage("Order Confirmation - Mike's Macaroon Market", content));
+    res.send(renderPage("Order Confirmation - Used Car Market", content));
   } catch (error) {
     console.error("Error processing order:", error);
     res.status(500).send("Error processing order");
